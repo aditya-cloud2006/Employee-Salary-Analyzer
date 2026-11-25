@@ -3,15 +3,7 @@ import java.util.Scanner;
 /*
  * Employee Salary Analyzer
  * Core Java + DSA (arrays, sorting, searching) only.
- * No ArrayList / HashMap / Collections.sort used.
- *
- * Run:  javac Main.java
- *       java Main
  */
-
-// ------------------------------------------------------------
-// Employee: simple data holder
-// ------------------------------------------------------------
 class Employee {
     private int id;
     private String name;
@@ -35,15 +27,10 @@ class Employee {
     }
 }
 
-// ------------------------------------------------------------
-// SalaryAnalyzer: all operations (sorting, searching, analysis)
-// ------------------------------------------------------------
 class SalaryAnalyzer {
     private static final int MAX = 100;
     private Employee[] emp = new Employee[MAX];
     private int count = 0;
-
-    // ---------------- Basic helpers ----------------
 
     public int getCount() { return count; }
 
@@ -87,9 +74,6 @@ class SalaryAnalyzer {
         }
         printTable(emp, count);
     }
-
-    // ---------------- SORTING ----------------
-
     // Bubble Sort by salary - Time: O(n^2), Space: O(1)
     public void bubbleSortBySalary(boolean ascending) {
         for (int i = 0; i < count - 1; i++) {
@@ -167,9 +151,6 @@ class SalaryAnalyzer {
         while (i < n1) a[k++] = L[i++];
         while (j < n2) a[k++] = R[j++];
     }
-
-    // ---------------- SEARCHING ----------------
-
     // Linear Search by name (case-insensitive) - Time: O(n)
     public void searchByName(String name) {
         boolean found = false;
@@ -218,9 +199,6 @@ class SalaryAnalyzer {
         if (found) System.out.println("---------------------------------------------------------");
         else System.out.println("No employee found in salary range " + min + " - " + max);
     }
-
-    // ---------------- ANALYSIS ----------------
-
     // Highest, lowest, average, total, second highest - Time: O(n)
     public void showStatistics() {
         if (count == 0) {
@@ -319,9 +297,6 @@ class SalaryAnalyzer {
     }
 }
 
-// ------------------------------------------------------------
-// Main: menu-driven program
-// ------------------------------------------------------------
 public class Main {
     private static Scanner sc = new Scanner(System.in);
 
